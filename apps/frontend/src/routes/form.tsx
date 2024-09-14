@@ -1,8 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { Box, Button, HStack, Text } from "@chakra-ui/react";
 import { Dropzone } from "../components";
-import { Link } from "react-router-dom";
-import "./form.css";
 
 export default function Form({ type }: { type: "reduce" | "offset" }) {
   const [category, setCategory] = useState("Transport");
@@ -21,29 +19,24 @@ export default function Form({ type }: { type: "reduce" | "offset" }) {
       padding="5"
       color="#2a3d29"
     >
-      <div style={{ position: "absolute", top: "10px", right: "10px" }}>
-        <Link to="/" style={{ textDecoration: "none" }}>
-          <Button
-            bg="#2a3d29"
-            color="#c5dcc2"
-            _hover={{ bg: "#c5dcc2", color: "#2a3d29" }}
-            width="200px"
-          >
-            Go back
-          </Button>
-        </Link>
-      </div>
-      <Text textAlign="center" fontSize="5xl" fontWeight="bold">
-        How to get your vet?{" "}
-      </Text>
+      {type === "reduce" ? (
+        <Text textAlign="center" fontSize="5xl" fontWeight="bold">
+          How do you crush your carbon?
+        </Text>
+      ) : (
+        <Text textAlign="center" fontSize="5xl" fontWeight="bold">
+          How do you earn carbon credits?
+        </Text>
+      )}
 
       {/* Category area */}
       <Text fontSize="2xl" fontWeight="bold">
-        {" "}
-        Step 1{" "}
+        Step 1
       </Text>
-      <Text paddingTop="1"> Step 1asdkjndsfkjcnkjsd </Text>
-      <HStack spacing={3} overflowX="auto">
+      <Text fontSize="md">
+        Choose the category of activity your action falls in!{" "}
+      </Text>
+      <HStack spacing={3} overflowX="auto" paddingTop="3">
         {categories.map((categoryName) => (
           <Button
             key={categoryName}
@@ -60,36 +53,49 @@ export default function Form({ type }: { type: "reduce" | "offset" }) {
       </HStack>
 
       {/* Dropzone area */}
-      <Text fontSize="2xl" fontWeight="bold" paddingTop="2">
-        {" "}
-        Step 2{" "}
+      <Text fontSize="2xl" fontWeight="bold" paddingTop="5">
+        Step 2
       </Text>
-      <Text> Step 1asdkjndsfkjcnkjsd </Text>
-      <Dropzone promptType={category} />
+      {type === "reduce" ? (
+        <Text fontSize="md">
+          Snap and upload a picture of your action! (e.g. Certificates,
+          reciepts, etc.)
+        </Text>
+      ) : (
+        <Text fontSize="md">
+          Snap and upload a picture of your action! (e.g. Items, Certificates
+          etc.)
+        </Text>
+      )}
+      <Dropzone />
 
       {/* Submit area */}
-      <Text fontSize="2xl" fontWeight="bold" paddingTop="2">
-        {" "}
-        Step 3{" "}
+      <Text fontSize="2xl" fontWeight="bold" paddingTop="5">
+        Step 3
       </Text>
-      <Text> Step 1asdkjndsfkjcnkjsd </Text>
+      <Text fontSize="md">
+        Last and final step! Generate your crushed carbon points and hit
+        "Submit"!
+      </Text>
 
-      <div style={{ position: "absolute", bottom: "10px", right: "10px" }}>
+      <div style={{ position: "absolute", right: "20px" }}>
         <Button
-          bg="#2a3d29"
-          color="#c5dcc2"
+          bg="#f79939"
+          color="#2a3d29"
           _hover={{ bg: "#c5dcc2", color: "#2a3d29" }}
           width="100px"
           marginRight="15"
+          borderRadius="full"
         >
           Generate
         </Button>
 
         <Button
-          bg="#2a3d29"
-          color="#c5dcc2"
+          bg="#f79939"
+          color="#2a3d29"
           _hover={{ bg: "#c5dcc2", color: "#2a3d29" }}
           width="100px"
+          borderRadius="full"
         >
           Confirm
         </Button>
