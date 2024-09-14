@@ -18,12 +18,20 @@ export default function Milestones() {
   const [category, setCategory] = useState("All");
 
   return (
-    <Box p={4} zIndex={1000} bg="#4e6b4c">
+    <Box
+      p={4}
+      zIndex={1000}
+      bg="#4e6b4c"
+      width="100vw"
+      height="100vh"
+      display="flex"
+      flexDirection="column"
+    >
       <Grid
         templateColumns={{ base: "1fr", md: "1fr 2fr 1fr" }}
         templateRows="repeat(2, 1fr)"
         gap={4}
-        height="100vh"
+        flex="1"
       >
         <Grid templateRows="1fr 1fr" gap={4}>
           <Card borderRadius="25" bg="white">
