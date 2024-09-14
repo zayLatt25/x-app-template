@@ -11,14 +11,51 @@ import { useDisclosure, useSubmission } from "../hooks";
 import loaderAnimation from "../assets/lottie/loader-json.json";
 import Lottie from "react-lottie";
 import { AirdropIcon, AlertIcon } from "./Icon";
-import { useMemo } from "react";
+import { useMemo, useState } from "react";
 
 export const SubmissionModal = () => {
   const { isLoading, response } = useSubmission();
   const { isOpen, onClose } = useDisclosure();
+  const [carbonFootprint, setCarbonFootprint] = useState(0);
+  const [carbonCredits, setCarbonCredits] = useState(0);
 
   const renderContent = useMemo(() => {
-    const isValid = response?.validation.validityFactor === 1;
+    if (response?.validation.validityFactor == undefined) return null;
+
+    const isValid =
+      response?.validation.validityFactor &&
+      response?.validation.validityFactor > 0.5;
+    if (isValid) {
+      // Transport data from https://ourworldindata.org/travel-carbon-footprint
+      if (response?.validation.distanceTravelled) {
+        if (
+          response?.validation.vehicleType === "bike" ||
+          response?.validation.vehicleType === "walk"
+        ) {
+          // 0kg CO2 per km while walking or biking
+          setCarbonFootprint(response?.validation.distanceTravelled * 0);
+        } else if (response?.validation.vehicleType === "bus") {
+          // 0.97kg CO2 per km per passenger on a bus on average
+          setCarbonFootprint(response?.validation.distanceTravelled * 0.97);
+        } else if (response?.validation.vehicleType === "train") {
+          // 0.35kg CO2 per km per passenger on a train on average
+          setCarbonFootprint(response?.validation.distanceTravelled * 0.35);
+        }
+      }
+      // Electricity data from https://www.nccs.gov.sg/singapores-climate-action/mitigation-efforts/power/
+      else if (response?.validation.kWh) {
+        // 0.4kg CO2 per kWh on average
+        setCarbonFootprint(response?.validation.kWh * 400);
+      } else if (response?.validation.carbonFootprint) {
+        setCarbonFootprint(response?.validation.carbonFootprint);
+      }
+      // Divide by 1000 to convert kilogram into metric ton, which is equivalent to 1 carbon credit for tree planting
+      else if (response?.validation.carbonSequestrationEstimate) {
+        setCarbonCredits(
+          response?.validation.carbonSequestrationEstimate / 1000
+        );
+      }
+    }
 
     return isValid ? (
       <VStack

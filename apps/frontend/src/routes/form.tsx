@@ -8,8 +8,8 @@ export default function Form({ type }: { type: "reduce" | "offset" }) {
   // Define categories based on the type prop
   const categories =
     type === "reduce"
-      ? ["Transport", "Self care"]
-      : ["Tree planting", "Volunteering"];
+      ? ["Transport", "Electricity", "Recyclable_Packaging"]
+      : ["Tree_Planting", "Waste_Removal", "Volunteering"];
 
   return (
     <Box
@@ -67,8 +67,9 @@ export default function Form({ type }: { type: "reduce" | "offset" }) {
           etc.)
         </Text>
       )}
-      {/* @ts-ignore */}
-      <Dropzone />
+
+      <Dropzone key={category} promptType={category} />
+
 
       {/* Submit area */}
       <Text fontSize="2xl" fontWeight="bold" paddingTop="5">
