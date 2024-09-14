@@ -4,6 +4,9 @@ import { backendURL } from "../config";
 
 export type Response = {
   validation: {
+    distanceTravelled?: number;
+    vehicleType?: string;
+    kWh?: number;
     validityFactor: number;
     descriptionOfAnalysis: string;
   };
