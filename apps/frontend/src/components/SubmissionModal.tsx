@@ -17,9 +17,10 @@ export const SubmissionModal = () => {
   const { isLoading, response } = useSubmission();
   const { isOpen, onClose } = useDisclosure();
   const [carbonFootprint, setCarbonFootprint] = useState(0);
+  const [carbonCredits, setCarbonCredits] = useState(0);
 
   const renderContent = useMemo(() => {
-    const isValid = response?.validation.validityFactor === 1;
+    const isValid = response?.validation.validityFactor > 0.5;
     if (isValid) {
       // Transport data from https://ourworldindata.org/travel-carbon-footprint
       if (response?.validation.distanceTravelled) {
@@ -27,20 +28,28 @@ export const SubmissionModal = () => {
           response?.validation.vehicleType === "bike" ||
           response?.validation.vehicleType === "walk"
         ) {
-          // 0g CO2 per km while walking or biking
+          // 0kg CO2 per km while walking or biking
           setCarbonFootprint(response?.validation.distanceTravelled * 0);
         } else if (response?.validation.vehicleType === "bus") {
-          // 97g CO2 per km per passenger on a bus on average
-          setCarbonFootprint(response?.validation.distanceTravelled * 97);
+          // 0.97kg CO2 per km per passenger on a bus on average
+          setCarbonFootprint(response?.validation.distanceTravelled * 0.97);
         } else if (response?.validation.vehicleType === "train") {
-          // 35g CO2 per km per passenger on a train on average
-          setCarbonFootprint(response?.validation.distanceTravelled * 35);
+          // 0.35kg CO2 per km per passenger on a train on average
+          setCarbonFootprint(response?.validation.distanceTravelled * 0.35);
         }
       }
       // Electricity data from https://www.nccs.gov.sg/singapores-climate-action/mitigation-efforts/power/
       else if (response?.validation.kWh) {
         // 0.4kg CO2 per kWh on average
         setCarbonFootprint(response?.validation.kWh * 400);
+      } else if (response?.validation.carbonFootprint) {
+        setCarbonFootprint(response?.validation.carbonFootprint);
+      }
+      // Divide by 1000 to convert kilogram into metric ton, which is equivalent to 1 carbon credit
+      else if (response?.validation.carbonSequestrationEstimate) {
+        setCarbonCredits(
+          response?.validation.carbonSequestrationEstimate / 1000
+        );
       }
     }
 

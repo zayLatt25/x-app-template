@@ -7,6 +7,8 @@ export type Response = {
     distanceTravelled?: number;
     vehicleType?: string;
     kWh?: number;
+    carbonFootprint?: number;
+    carbonSequestrationEstimate?: number;
     validityFactor: number;
     descriptionOfAnalysis: string;
   };
