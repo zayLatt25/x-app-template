@@ -27,7 +27,6 @@ function App() {
         >
           <div className="bg-[#506c4c]">
             <Navbar />
-
             <div className="min-h-screen relative">
               <Routes>
                 <Route path="/" element={<Home />} />
