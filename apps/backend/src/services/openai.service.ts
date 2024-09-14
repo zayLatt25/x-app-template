@@ -73,16 +73,21 @@ export class OpenaiService {
         break;
 
       case 'Waste_Removal':
-        break;
+        return {
+          validityFactor: 0,
+          descriptionOfAnalysis: 'Waste Removal Coming Soon...',
+        };
 
       case 'Volunteering':
-        break;
+        return {
+          validityFactor: 0,
+          descriptionOfAnalysis: 'Volunteering Coming Soon...',
+        };
 
       default:
         throw new HttpException(400, 'Invalid prompt type');
     }
 
-    console.log(prompt);
     const gptResponse = await openAIHelper.askChatGPTAboutImage({
       base64Image: image,
       prompt,

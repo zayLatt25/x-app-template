@@ -20,7 +20,11 @@ export const SubmissionModal = () => {
   const [carbonCredits, setCarbonCredits] = useState(0);
 
   const renderContent = useMemo(() => {
-    const isValid = response?.validation.validityFactor > 0.5;
+    if (response?.validation.validityFactor == undefined) return null;
+
+    const isValid =
+      response?.validation.validityFactor &&
+      response?.validation.validityFactor > 0.5;
     if (isValid) {
       // Transport data from https://ourworldindata.org/travel-carbon-footprint
       if (response?.validation.distanceTravelled) {
@@ -45,7 +49,7 @@ export const SubmissionModal = () => {
       } else if (response?.validation.carbonFootprint) {
         setCarbonFootprint(response?.validation.carbonFootprint);
       }
-      // Divide by 1000 to convert kilogram into metric ton, which is equivalent to 1 carbon credit
+      // Divide by 1000 to convert kilogram into metric ton, which is equivalent to 1 carbon credit for tree planting
       else if (response?.validation.carbonSequestrationEstimate) {
         setCarbonCredits(
           response?.validation.carbonSequestrationEstimate / 1000
