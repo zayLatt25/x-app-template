@@ -1,22 +1,18 @@
 import { DAppKitProvider } from "@vechain/dapp-kit-react";
-import { ChakraProvider, Container, Flex } from "@chakra-ui/react";
-import {
-  Dropzone,
-  Footer,
-  InfoCard,
-  Instructions,
-  Navbar,
-  SubmissionModal,
-} from "./components";
+import { ChakraProvider } from "@chakra-ui/react";
+import { Footer, Navbar, SubmissionModal } from "./components";
 import { lightTheme } from "./theme";
-import { Routes, Route, BrowserRouter } from 'react-router-dom'
-
+import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./routes/home";
-import Protected from './routes/protected'
-import Settings from './routes/settings'
-import Login from './routes/login'
+import Protected from "./routes/protected";
+import Settings from "./routes/settings";
+import Login from "./routes/login";
+import Form from "./routes/form";
+import Milestones from "./routes/milestones";
 
 function App() {
+  // const path = location.pathname;
+
   return (
     <BrowserRouter>
       <ChakraProvider theme={lightTheme}>
@@ -32,12 +28,16 @@ function App() {
             <div className="min-h-[80vh] relative">
               <Routes>
                 <Route path="/" element={<Home />} />
+                <Route path="/reduceForm" element={<Form type="reduce" />} />
+                <Route path="/offsetForm" element={<Form type="offset" />} />
                 <Route path="/protected" element={<Protected />} />
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/login" element={<Login />} />
+                <Route path="/milestones" element={<Milestones />} />
               </Routes>
             </div>
-            <Footer />
+
+            {/* {path === "/" || path === "/form" ? null : <Footer />} */}
           </div>
           {/* MODALS  */}
           <SubmissionModal />
