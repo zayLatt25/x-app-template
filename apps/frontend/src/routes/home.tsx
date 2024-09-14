@@ -22,7 +22,7 @@ export default function Home() {
       <div className="scroll-container" style={{ backgroundColor: "#4e6b4c" }}>
         <Flex justifyContent="center" alignItems="center" height="100%" gap={8}>
           <div>
-            <Text color="#efefef" fontSize="5xl">
+            <Text color="#efefef" fontSize="5xl" fontWeight="bold">
               REDUCE
             </Text>
             <Card
@@ -50,10 +50,10 @@ export default function Home() {
                     <Button
                       bg="#2a3d29"
                       color="#c5dcc2"
-                      _hover={{ bg: "#c5dcc2", color: "#2a3d29" }}
+                      _hover={{ bg: "#c5dcc2", color: "#efefef" }}
                       width="200px"
                     >
-                      Get your vet!
+                      Crush your carbon!
                     </Button>
                   </Link>
                 </Flex>
@@ -62,7 +62,12 @@ export default function Home() {
           </div>
 
           <div>
-            <Text color="#efefef" fontSize="5xl" textAlign="right">
+            <Text
+              color="#efefef"
+              fontSize="5xl"
+              textAlign="right"
+              fontWeight="bold"
+            >
               OFFSET
             </Text>
             <Card
@@ -90,10 +95,10 @@ export default function Home() {
                     <Button
                       bg="#2a3d29"
                       color="#c5dcc2"
-                      _hover={{ bg: "#c5dcc2", color: "#2a3d29" }}
+                      _hover={{ bg: "#c5dcc2", color: "#efefef" }}
                       width="200px"
                     >
-                      Get your vet!
+                      Get your credit!
                     </Button>
                   </Link>
                 </Flex>

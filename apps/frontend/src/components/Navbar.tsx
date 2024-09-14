@@ -21,7 +21,7 @@ export const Navbar = () => {
         maxW={"container.xl"}
       >
         <HStack flex={1} justifyContent={"start"}>
-          <Image src="/vebetterdao-logo.svg" />
+          <Image src="/logo.png" w="10" />
         </HStack>
         <HStack flex={1} spacing={4} justifyContent={"center"}>
           <a
@@ -31,14 +31,7 @@ export const Navbar = () => {
             Home
           </a>
         </HStack>
-        <HStack flex={1} spacing={4} justifyContent={"center"}>
-          <a
-            className="hidden sm:block hover:cursor-pointer hover:underline"
-            href="/protected"
-          >
-            Protected
-          </a>
-        </HStack>
+
         <HStack flex={1} spacing={4} justifyContent={"center"}>
           <a
             className="hidden sm:block hover:cursor-pointer hover:underline"
@@ -52,7 +45,7 @@ export const Navbar = () => {
             className="hidden sm:block hover:cursor-pointer hover:underline"
             href="/contact"
           >
-            Contact
+            Snap your proof!
           </a>
         </HStack>
 

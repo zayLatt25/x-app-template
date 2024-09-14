@@ -18,6 +18,10 @@ export const ConnectWalletButton = () => {
           size="md"
           leftIcon={<FaWallet />}
           data-testid="connect-wallet"
+          _hover={{
+            color: "#2a3d29",
+            bg: "#efefef",
+          }}
         >
           Connect Wallet
         </Button>
