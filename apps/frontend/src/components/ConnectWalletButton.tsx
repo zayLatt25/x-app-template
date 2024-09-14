@@ -4,7 +4,7 @@ import { FaWallet } from "react-icons/fa6";
 import { AddressIcon } from "./Icon";
 import { humanAddress } from "@repo/utils/FormattingUtils";
 
-export const ConnectWalletButton = () => {
+export const ConnectWalletButton = ({ size }: { size?: string }) => {
   const { account } = useWallet();
   const { open } = useWalletModal();
 
@@ -15,7 +15,7 @@ export const ConnectWalletButton = () => {
           onClick={open}
           bg="#2a3d29"
           color="#efefef"
-          size="md"
+          size={size || "md"}
           leftIcon={<FaWallet />}
           data-testid="connect-wallet"
           _hover={{
