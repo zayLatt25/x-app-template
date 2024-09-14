@@ -3,7 +3,6 @@ import { ChakraProvider } from "@chakra-ui/react";
 import { Footer, Navbar, SubmissionModal } from "./components";
 import { lightTheme } from "./theme";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
-
 import Home from "./routes/home";
 import Protected from "./routes/protected";
 import Settings from "./routes/settings";
