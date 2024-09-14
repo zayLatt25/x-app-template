@@ -28,7 +28,7 @@ export default function Home() {
             <Card
               bg="#efefef"
               minHeight="350"
-              paddingTop="200"
+              paddingTop="210"
               borderRadius="25"
             >
               <Image
@@ -42,15 +42,17 @@ export default function Home() {
 
               <CardBody>
                 <Text fontSize="md">
-                  View a summary of all your customers over the last month.
+                  Track and reduce your carbon emissions by taking snaps of you
+                  using public transport, cycling, or adopting energy-efficient
+                  habits!
                 </Text>
 
                 <Flex justify="center" mt="4">
                   <Link to="/reduceForm" style={{ textDecoration: "none" }}>
                     <Button
                       bg="#2a3d29"
-                      color="#c5dcc2"
-                      _hover={{ bg: "#c5dcc2", color: "#efefef" }}
+                      color="#efefef"
+                      _hover={{ bg: "#c5dcc2", color: "#2a3d29" }}
                       width="200px"
                     >
                       Crush your carbon!
@@ -73,7 +75,7 @@ export default function Home() {
             <Card
               bg="#efefef"
               minHeight="350"
-              paddingTop="200"
+              paddingTop="210"
               borderRadius="25"
             >
               <Image
@@ -81,21 +83,23 @@ export default function Home() {
                 position="absolute"
                 top="-90px"
                 left="50%"
-                transform="translateX(-70%)"
-                width="300px"
+                transform="translateX(-65%)"
+                width="310px"
               />
 
               <CardBody>
                 <Text fontSize="md">
-                  View a summary of all your customers over the last month.
+                  Offset unavoidable emissions by participating and snapping in
+                  activities such as planting trees or engaging in sustainable
+                  community service projects.
                 </Text>
 
                 <Flex justify="center" mt="4">
                   <Link to="/offsetForm" style={{ textDecoration: "none" }}>
                     <Button
                       bg="#2a3d29"
-                      color="#c5dcc2"
-                      _hover={{ bg: "#c5dcc2", color: "#efefef" }}
+                      color="#efefef"
+                      _hover={{ bg: "#c5dcc2", color: "#2a3d29" }}
                       width="200px"
                     >
                       Get your credit!
