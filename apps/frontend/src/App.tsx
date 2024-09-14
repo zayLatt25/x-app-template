@@ -10,6 +10,7 @@ import Login from "./routes/login";
 import Form from "./routes/form";
 import Milestones from "./routes/milestones";
 import Profile from "./routes/profile";
+import Dashboard from "./routes/dashboard";
 
 function App() {
   // const path = location.pathname;
@@ -26,7 +27,6 @@ function App() {
         >
           <div className="bg-[#506c4c]">
             <Navbar />
-            
             <div className="min-h-screen relative">
               <Routes>
                 <Route path="/" element={<Home />} />
@@ -37,6 +37,7 @@ function App() {
                 <Route path="/login" element={<Login />} />
                 <Route path="/milestones" element={<Milestones />} />
                 <Route path="/profile" element={<Profile />} />
+                <Route path="/dashboard" element={<Dashboard />} />
               </Routes>
             </div>
 
