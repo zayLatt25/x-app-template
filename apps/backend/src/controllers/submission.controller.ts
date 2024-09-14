@@ -13,8 +13,6 @@ export class SubmissionController {
     try {
       const body: Omit<Submission, 'timestamp' | 'promptType'> = req.body;
 
-      console.log(req.body);
-
       const submissionRequest: Submission = {
         ...body,
         timestamp: Date.now(),
