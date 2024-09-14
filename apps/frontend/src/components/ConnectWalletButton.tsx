@@ -22,6 +22,7 @@ export const ConnectWalletButton = () => {
             color: "#2a3d29",
             bg: "#efefef",
           }}
+          borderRadius="full"
         >
           Connect Wallet
         </Button>

@@ -1,5 +1,7 @@
 import { Box, Container, HStack, Image } from "@chakra-ui/react";
 import { ConnectWalletButton } from "./ConnectWalletButton";
+import Profile from "../routes/profile";
+
 export const Navbar = () => {
   return (
     <Box
@@ -23,6 +25,7 @@ export const Navbar = () => {
         <HStack flex={1} justifyContent={"start"}>
           <Image src="/logo.png" w="10" />
         </HStack>
+
         <HStack flex={1} spacing={4} justifyContent={"center"}>
           <a
             className="hidden sm:block hover:cursor-pointer hover:underline"
@@ -40,13 +43,10 @@ export const Navbar = () => {
             Settings
           </a>
         </HStack>
+
         <HStack flex={1} spacing={4} justifyContent={"center"}>
-          <a
-            className="hidden sm:block hover:cursor-pointer hover:underline"
-            href="/contact"
-          >
-            Snap your proof!
-          </a>
+          {/* Remove the old Profile link and replace with the drawer */}
+          <Profile />
         </HStack>
 
         <HStack flex={1} spacing={4} justifyContent={"end"}>
