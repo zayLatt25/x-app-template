@@ -1,4 +1,3 @@
-import React, { useEffect, useState } from "react";
 import { useWallet } from "@vechain/dapp-kit-react";
 import { useNavigate } from 'react-router-dom'
 import { ConnectWalletButton } from "../components";

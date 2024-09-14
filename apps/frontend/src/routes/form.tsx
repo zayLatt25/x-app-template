@@ -67,6 +67,7 @@ export default function Form({ type }: { type: "reduce" | "offset" }) {
           etc.)
         </Text>
       )}
+      {/* @ts-ignore */}
       <Dropzone />
 
       {/* Submit area */}

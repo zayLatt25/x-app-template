@@ -1,9 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useWallet } from "@vechain/dapp-kit-react";
 import { Button, Card, CardBody, CardFooter, Heading, Stack, Image, Text, Box, CardHeader, StackDivider } from "@chakra-ui/react";
 
 export default function Settings() {
-    const { account } = useWallet();
 
     // if (!account) {
     //     return <div className="absolute inset-0 h-full grid place-items-center ">
