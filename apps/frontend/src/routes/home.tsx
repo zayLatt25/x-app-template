@@ -5,17 +5,6 @@ import "./home.css";
 export default function Home() {
   return (
     <div style={{ backgroundColor: "#c5dcc2" }}>
-      <div style={{ position: "absolute", top: "10px", right: "10px" }}>
-        <Button
-          bg="#2a3d29"
-          color="#c5dcc2"
-          _hover={{ bg: "#c5dcc2", color: "#2a3d29" }}
-          width="100px"
-          margin="3"
-        >
-          Profile
-        </Button>
-      </div>
       <div className="parallax"></div>
       <Image src="/hill.png" />
 
