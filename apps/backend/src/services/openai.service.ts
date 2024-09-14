@@ -20,7 +20,7 @@ export class OpenaiService {
             "validityFactor": {validityFactorNumber}, // 0-1, 1 if it satisfies all the criteria, 0 otherwise
             "distanceTravelled": "{distance}", // distance travelled in km, even if the image shows other units, convert it to km
             "vehicleType": "{vehicleType}", // indicate the type of vehicle in the image. If the user walked, indicate "walk". If the user used a bike, indicate "bike". If the user used a bus, indicate "bus". If the user used a train, indicate "train".
-            "descriptionOfAnalysis": "{analysis}", // indicate your analysis of the image and why it satisfies or not the criteria. The analysis will be shown to the user so make him understand why the image doesn't satisfy the criteria if it doesn't without going into detail on exact criteria. Remember we are rewarding users that drink coffee in a sustainable way.
+            "descriptionOfAnalysis": "{analysis}", // indicate your analysis of the image and why it satisfies or not the criteria. The analysis will be shown to the user so make him understand why the image doesn't satisfy the criteria if it doesn't without going into detail on exact criteria.
             }
             `;
         break;
@@ -34,8 +34,7 @@ export class OpenaiService {
             {
             "validityFactor": {validityFactorNumber}, // 0-1, 1 if it satisfies all the criteria, 0 otherwise
             “kWh”: {electricityUsed}, // the final kilowatt-hour of the month as shown in the image
-            "descriptionOfAnalysis": "{analysis}", // indicate your analysis of the image and why it satisfies or not the criteria. The analysis will be shown to the user so make him understand why the image doesn't satisfy the criteria if it doesn't without going into detail on exact criteria. Remember we are rewarding users that drink coffee in a sustainable way.
-            }
+            "descriptionOfAnalysis": "{analysis}", // indicate your analysis of the image and why it satisfies or not the criteria. The analysis will be shown to the user so make him understand why the image doesn't satisfy the criteria if it doesn't without going into detail on exact criteria.
             `;
         break;
 
