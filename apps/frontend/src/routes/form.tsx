@@ -3,7 +3,7 @@ import { Box, Button, HStack, Text } from "@chakra-ui/react";
 import { Dropzone } from "../components";
 
 export default function Form({ type }: { type: "reduce" | "offset" }) {
-  const [category, setCategory] = useState("All");
+  const [category, setCategory] = useState("Transport");
 
   // Define categories based on the type prop
   const categories =
