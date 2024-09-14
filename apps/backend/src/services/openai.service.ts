@@ -39,13 +39,13 @@ export class OpenaiService {
             `;
         break;
 
-      case 'Packaging':
+      case 'Recyclable_Packaging':
         break;
 
-      case 'Trees':
+      case 'Tree_Planting':
         break;
 
-      case 'Trash':
+      case 'Waste_Removal':
         break;
 
       case 'Volunteering':
