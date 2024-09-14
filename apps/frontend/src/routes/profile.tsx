@@ -17,6 +17,11 @@ import { MdSettings } from "react-icons/md";
 import { FaTrophy } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
+const emitted = 2197
+const distance = 53671
+const crunched = distance * 0.19 - emitted
+const offset = 539
+
 
 export default function ProfileDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure(); // Control drawer state
@@ -57,7 +62,37 @@ export default function ProfileDrawer() {
                 px="4"
               >
                 <Text color="#2a3d29" fontWeight="bold">
-                  Crushed Carbons :{" "}
+                  Carbons Emitted : {emitted} kg
+                </Text>
+              </Box>
+
+              <Box
+                w="full"
+                h="10"
+                bg="#8abf86"
+                rounded="md"
+                display="flex"
+                alignItems="center"
+                justifyContent="start"
+                px="4"
+              >
+                <Text color="#4e6b4c" fontWeight="bold">
+                  Distance Travelled : {distance} km
+                </Text>
+              </Box>
+              <Box
+                w="full"
+                h="10"
+                // bg="#688f65"
+                rounded="md"
+                display="flex"
+                alignItems="center"
+                justifyContent="start"
+                px="4"
+                className="bg-black animate-pulse "
+              >
+                <Text color="white" fontWeight="bold">
+                  Carbon Crunched : {parseInt(crunched.toString())} kg
                 </Text>
               </Box>
 
@@ -72,7 +107,7 @@ export default function ProfileDrawer() {
                 px="4"
               >
                 <Text color="#c5dcc2" fontWeight="bold">
-                  Carbon Credits earned :{" "}
+                  Carbon Offset : {offset} kg
                 </Text>
               </Box>
 

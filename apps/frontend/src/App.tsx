@@ -31,7 +31,6 @@ function App() {
                 <Route path="/settings" element={<Settings />} />
                 <Route path="/login" element={<Login />} />
                 <Route path="/milestones" element={<Milestones />} />
-                <Route path="/profile" element={<Profile />} />
               </Routes>
             </div>
           </div>
