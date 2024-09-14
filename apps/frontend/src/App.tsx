@@ -27,7 +27,7 @@ function App() {
           nodeUrl="https://testnet.vechain.org/"
           logLevel={"DEBUG"}
         >
-          <div className="bg-emerald-700">
+          <div className="bg-[#506c4c]">
             <Navbar />
             <div className="min-h-[80vh] relative">
               <Routes>

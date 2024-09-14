@@ -10,9 +10,9 @@ export default function Login() {
         navigate('/')
     }
     return <div className="absolute inset-0 h-full grid place-items-center text-xl font-bold md:font-extrabold">
-        <div className=" " data-x="bg-emerald-500 px-5 md:px-24 shadow-lg rounded-2xl">
+        <div className="md:px-20 border border-white/40 rounded-2xl" data-x="bg-[#506c4c] px-5 md:px-24 shadow-lg rounded-2xl">
             <div className="max-w-xl bg-white p-8 rounded-2xl px-10">
-                <h2 className="text-3xl font-bold text-green-800 mb-2">SG Odyssey</h2>
+                <h2 className="text-3xl font-bold text-[#506c4c] mb-2">SG Odyssey</h2>
                 <p className="text-green-700 mb-6 text-sm">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
                     incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud
@@ -21,7 +21,7 @@ export default function Login() {
                 <form className="space-y-4">
                     <input type="text" placeholder="Username" className="w-full px-4 py-3 rounded-full border-green-300 border" />
                     <input type="password" placeholder="Password" className="w-full px-4 py-3 rounded-full border-green-300 border" />
-                    <button className="w-full bg-green-800 text-white rounded-full py-3 hover:bg-green-700 transition-colors">
+                    <button className="w-full bg-[#506c4c] text-white rounded-full py-3 hover:bg-green-700 transition-colors">
                         Login
                     </button>
                 </form>
