@@ -10,7 +10,7 @@ export class OpenaiService {
 
     let prompt = '';
     switch (promptType) {
-      case 'transport':
+      case 'Transport':
         prompt = `
                     Analyze the image provided. The image MUST satisfy all of the following criteria:
                         1. It must be a screenshot or picture of public transport including bikes, and buses
@@ -23,19 +23,19 @@ export class OpenaiService {
                     `;
         break;
 
-      case 'electricity':
+      case 'Electricity':
         break;
 
-      case 'packaging':
+      case 'Packaging':
         break;
 
-      case 'trees':
+      case 'Trees':
         break;
 
-      case 'trash':
+      case 'Trash':
         break;
 
-      case 'volunteering':
+      case 'Volunteering':
         break;
 
       default:
