@@ -36,8 +36,6 @@ function App() {
                 <Route path="/profile" element={<Profile />} />
               </Routes>
             </div>
-
-            {/* {path === "/" || path === "/form" ? null : <Footer />} */}
           </div>
           {/* MODALS  */}
           <SubmissionModal />

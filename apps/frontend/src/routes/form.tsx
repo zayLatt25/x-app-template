@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Box, Button, HStack, Text } from "@chakra-ui/react";
 import { Dropzone } from "../components";
-import "./form.css";
 
 export default function Form({ type }: { type: "reduce" | "offset" }) {
   const [category, setCategory] = useState("All");

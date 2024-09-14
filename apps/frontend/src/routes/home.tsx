@@ -30,7 +30,7 @@ export default function Home() {
               />
 
               <CardBody>
-                <Text fontSize="md">
+                <Text fontSize="md" textAlign="center">
                   Track and reduce your carbon emissions by taking snaps of you
                   using public transport, cycling, or adopting energy-efficient
                   habits!
@@ -77,7 +77,7 @@ export default function Home() {
               />
 
               <CardBody>
-                <Text fontSize="md">
+                <Text fontSize="md" textAlign="center">
                   Offset unavoidable emissions by participating and snapping in
                   activities such as planting trees or engaging in sustainable
                   community service projects.

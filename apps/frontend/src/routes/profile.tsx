@@ -45,7 +45,6 @@ export default function ProfileDrawer() {
               {/* Some profile sections */}
               <Box w="full" h="10" bg="#506c4c" opacity="0.5" rounded="md" />
               <Box w="full" h="10" bg="#506c4c" opacity="0.7" rounded="md" />
-              <Box w="full" h="10" bg="#506c4c" opacity="1" rounded="md" />
 
               {/* Settings and Awards */}
               <Box display="flex" alignItems="center">
@@ -66,7 +65,8 @@ export default function ProfileDrawer() {
 
           <DrawerFooter>
             <Button
-              colorScheme="yellow"
+              bg="#f79939"
+              color="#2a3d29"
               w="full"
               onClick={() => alert("Logout")}
             >
