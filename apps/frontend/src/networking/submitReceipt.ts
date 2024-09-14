@@ -4,6 +4,11 @@ import { backendURL } from "../config";
 
 export type Response = {
   validation: {
+    distanceTravelled?: number;
+    vehicleType?: string;
+    kWh?: number;
+    carbonFootprint?: number;
+    carbonSequestrationEstimate?: number;
     validityFactor: number;
     descriptionOfAnalysis: string;
   };

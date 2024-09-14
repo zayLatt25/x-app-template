@@ -21,7 +21,6 @@ export const Dropzone = ({ promptType }: { promptType: string }) => {
     accept: {
       "image/*": [], // Accept only image files
     },
-
   });
 
   const onFileUpload = useCallback(
