@@ -10,7 +10,7 @@ export const Navbar = () => {
       py={4}
       h={"auto"}
       w={"full"}
-      bg={"#f7f7f7"}
+      bg={"#efefef"}
     >
       <Container
         w="full"
@@ -24,16 +24,36 @@ export const Navbar = () => {
           <Image src="/vebetterdao-logo.svg" />
         </HStack>
         <HStack flex={1} spacing={4} justifyContent={"center"}>
-          <a className="hidden sm:block hover:cursor-pointer hover:underline" href="/">Home</a>
+          <a
+            className="hidden sm:block hover:cursor-pointer hover:underline"
+            href="/"
+          >
+            Home
+          </a>
         </HStack>
         <HStack flex={1} spacing={4} justifyContent={"center"}>
-          <a className="hidden sm:block hover:cursor-pointer hover:underline" href="/protected">Protected</a>
+          <a
+            className="hidden sm:block hover:cursor-pointer hover:underline"
+            href="/protected"
+          >
+            Protected
+          </a>
         </HStack>
         <HStack flex={1} spacing={4} justifyContent={"center"}>
-          <a className="hidden sm:block hover:cursor-pointer hover:underline" href="/settings">Settings</a>
+          <a
+            className="hidden sm:block hover:cursor-pointer hover:underline"
+            href="/settings"
+          >
+            Settings
+          </a>
         </HStack>
         <HStack flex={1} spacing={4} justifyContent={"center"}>
-          <a className="hidden sm:block hover:cursor-pointer hover:underline" href="/contact">Contact</a>
+          <a
+            className="hidden sm:block hover:cursor-pointer hover:underline"
+            href="/contact"
+          >
+            Contact
+          </a>
         </HStack>
 
         <HStack flex={1} spacing={4} justifyContent={"end"}>

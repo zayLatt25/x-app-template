@@ -13,7 +13,8 @@ export const ConnectWalletButton = () => {
       <Fade in={true}>
         <Button
           onClick={open}
-          colorScheme="primary"
+          bg="#2a3d29"
+          color="#efefef"
           size="md"
           leftIcon={<FaWallet />}
           data-testid="connect-wallet"

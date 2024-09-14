@@ -1,6 +1,6 @@
 import { DAppKitProvider } from "@vechain/dapp-kit-react";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Footer, Navbar, SubmissionModal } from "./components";
+import { Navbar, SubmissionModal } from "./components";
 import { lightTheme } from "./theme";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./routes/home";
@@ -12,8 +12,6 @@ import Milestones from "./routes/milestones";
 import Profile from "./routes/profile";
 
 function App() {
-  // const path = location.pathname;
-
   return (
     <BrowserRouter>
       <ChakraProvider theme={lightTheme}>
