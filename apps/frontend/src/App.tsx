@@ -1,6 +1,6 @@
 import { DAppKitProvider } from "@vechain/dapp-kit-react";
 import { ChakraProvider } from "@chakra-ui/react";
-import { Footer, Navbar, SubmissionModal } from "./components";
+import { Navbar, SubmissionModal } from "./components";
 import { lightTheme } from "./theme";
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import Home from "./routes/home";
@@ -13,8 +13,6 @@ import Profile from "./routes/profile";
 import Dashboard from "./routes/dashboard";
 
 function App() {
-  // const path = location.pathname;
-
   return (
     <BrowserRouter>
       <ChakraProvider theme={lightTheme}>
@@ -40,8 +38,6 @@ function App() {
                 <Route path="/dashboard" element={<Dashboard />} />
               </Routes>
             </div>
-
-            {/* {path === "/" || path === "/form" ? null : <Footer />} */}
           </div>
           {/* MODALS  */}
           <SubmissionModal />
