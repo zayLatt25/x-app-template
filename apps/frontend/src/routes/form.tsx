@@ -67,7 +67,9 @@ export default function Form({ type }: { type: "reduce" | "offset" }) {
           etc.)
         </Text>
       )}
+
       <Dropzone key={category} promptType={category} />
+
 
       {/* Submit area */}
       <Text fontSize="2xl" fontWeight="bold" paddingTop="5">

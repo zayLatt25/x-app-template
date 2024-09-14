@@ -10,6 +10,7 @@ import {
   AccordionIcon,
   HStack,
   Button,
+  Divider,
 } from "@chakra-ui/react";
 import { useState } from "react";
 
@@ -47,6 +48,22 @@ export default function Milestones() {
               <Text fontSize="2xl" fontWeight="bold" mb={2}>
                 Leaderboard
               </Text>
+              <Divider />
+              <div className="text-start px-2 py-1">
+                <Text fontSize="md" fontWeight="bold" mb={2}>
+                  1. Walter
+                </Text>
+                <Text fontSize="md" fontWeight="bold" mb={2}>
+                  2. Jessie
+                </Text>
+                <Text fontSize="md" fontWeight="bold" mb={2}>
+                  3. Mike
+                </Text>
+                <Text fontSize="md" fontWeight="bold" mb={2}>
+                  4. Tuco
+                </Text>
+              </div>
+
             </Box>
           </Card>
         </Grid>
