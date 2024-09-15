@@ -74,7 +74,7 @@ export const SubmissionModal = () => {
         </Text>
         <HStack>
           <Text fontSize={24} fontWeight={400}>
-            You've earned 1
+            You've earned 5
           </Text>
           <Image src="b3tr-token.svg" />
         </HStack>
