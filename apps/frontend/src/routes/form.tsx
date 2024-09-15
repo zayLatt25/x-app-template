@@ -108,7 +108,7 @@ export default function Form({ type }: { type: "reduce" | "offset" }) {
         </div>
       )}
 
-      <div style={{ position: "absolute", right: "20px" }}>
+      <a href="/" style={{ position: "absolute", right: "20px" }}>
         <Button
           bg="#f79939"
           color="#2a3d29"
@@ -118,7 +118,7 @@ export default function Form({ type }: { type: "reduce" | "offset" }) {
         >
           Confirm
         </Button>
-      </div>
+      </a>
     </Box>
   );
 }
