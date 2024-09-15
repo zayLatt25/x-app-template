@@ -16,12 +16,12 @@ import {
 import { MdSettings } from "react-icons/md";
 import { FaTrophy } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { useConnex, useWallet } from "@vechain/dapp-kit-react";
 
-const emitted = 2197
-const distance = 53671
-const crunched = distance * 0.19 - emitted
-const offset = 539
-
+const emitted = 2197;
+const distance = 53671;
+const crunched = distance * 0.19 - emitted;
+const offset = 539;
 
 export default function ProfileDrawer() {
   const { isOpen, onOpen, onClose } = useDisclosure(); // Control drawer state
