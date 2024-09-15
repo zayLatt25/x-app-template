@@ -14,8 +14,6 @@ export async function deploy() {
     // If we are running on the solo network, we need to deploy the mock contracts
     // and generate the appID
     if (network.name === 'vechain_solo') {
-
-
         console.log(`Deploying mock RewardToken...`);
         const RewardTokenContract = await ethers.getContractFactory('B3TR_Mock');
         const rewardToken = await RewardTokenContract.deploy();
@@ -45,7 +43,7 @@ export async function deploy() {
 
         console.log(`Funding contract...`);
         await rewardToken.approve(await x2EarnRewardsPool.getAddress(), ethers.parseEther('10000'));
-        await x2EarnRewardsPool.deposit(ethers.parseEther('2000'), appID);
+        await x2EarnRewardsPool.deposit(ethers.parseEther('400'), appID);
         console.log('Funded');
     }
 
@@ -66,9 +64,9 @@ export async function deploy() {
 
     console.log('To start using the contract, we need to set the rewards amount and switch to the next cycle');
 
-    const rewardsAmountResult = await (await ecoEarnInstance.setRewardsAmount(1000000000000000000000n)).wait();
+    const rewardsAmountResult = await (await ecoEarnInstance.setRewardsAmount(400000000000000000000n)).wait();
 
-    console.log('Rewards set reward amount to 1000');
+    console.log('Rewards set reward amount to 400');
 
     if (rewardsAmountResult == null || rewardsAmountResult.status !== 1) {
         throw new Error('Failed to set rewards amount');
