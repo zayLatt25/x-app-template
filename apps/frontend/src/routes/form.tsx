@@ -4,6 +4,8 @@ import { Dropzone } from "../components";
 
 export default function Form({ type }: { type: "reduce" | "offset" }) {
   const [category, setCategory] = useState("Transport");
+  const [successData, setSuccessData] = useState<any>();
+  const [success, setSuccess] = useState(false);
 
   // Define categories based on the type prop
   const categories =
@@ -68,30 +70,45 @@ export default function Form({ type }: { type: "reduce" | "offset" }) {
         </Text>
       )}
 
-      <Dropzone key={category} promptType={category} />
-
+      <Dropzone
+        key={category}
+        promptType={category}
+        setSuccessData={setSuccessData}
+        setSuccess={setSuccess}
+      />
 
       {/* Submit area */}
       <Text fontSize="2xl" fontWeight="bold" paddingTop="5">
         Step 3
       </Text>
       <Text fontSize="md">
-        Last and final step! Generate your crushed carbon points and hit
-        "Submit"!
+        Last and final step! Check the numbers and confirm!
       </Text>
+      {success && (
+        <div className="flex place-items-center mt-4 text-3xl">
+          <span className="mr-2">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="36"
+              height="36"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="green"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="lucide lucide-leaf"
+            >
+              <path d="M11 20A7 7 0 0 1 9.8 6.1C15.5 5 17 4.48 19 2c1 2 2 4.18 2 8 0 5.5-4.78 10-10 10Z" />
+              <path d="M2 21c0-3 1.85-5.36 5.08-6C9.5 14.52 12 13 13 12" />
+            </svg>
+          </span>
+          {successData} kg of CO2{" "}
+          {window.location.href.includes("offset") ? "offset" : "emitted"}.
+        </div>
+      )}
 
       <div style={{ position: "absolute", right: "20px" }}>
-        <Button
-          bg="#f79939"
-          color="#2a3d29"
-          _hover={{ bg: "#c5dcc2", color: "#2a3d29" }}
-          width="100px"
-          marginRight="15"
-          borderRadius="full"
-        >
-          Generate
-        </Button>
-
         <Button
           bg="#f79939"
           color="#2a3d29"
