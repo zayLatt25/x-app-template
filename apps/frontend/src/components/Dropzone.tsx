@@ -7,7 +7,15 @@ import { useWallet } from "@vechain/dapp-kit-react";
 import { submitReceipt } from "../networking";
 import { useDisclosure, useSubmission } from "../hooks";
 
-export const Dropzone = ({ promptType }: { promptType: string }) => {
+export const Dropzone = ({
+  promptType,
+  setSuccessData,
+  setSuccess,
+}: {
+  promptType: string;
+  setSuccessData: any;
+  setSuccess: any;
+}) => {
   const { account } = useWallet();
 
   const { setIsLoading, setResponse } = useSubmission();
@@ -56,6 +64,45 @@ export const Dropzone = ({ promptType }: { promptType: string }) => {
         console.log(response);
 
         setResponse(response);
+
+        if (response?.validation.validityFactor == undefined) return null;
+
+        const isValid =
+          response?.validation.validityFactor &&
+          response?.validation.validityFactor > 0.5;
+
+        if (isValid) {
+          setSuccess(true);
+          // Transport data from https://ourworldindata.org/travel-carbon-footprint
+          if (response?.validation.distanceTravelled) {
+            if (
+              response?.validation.vehicleType === "bike" ||
+              response?.validation.vehicleType === "walk"
+            ) {
+              // 0kg CO2 per km while walking or biking
+              setSuccessData(response?.validation.distanceTravelled * 0);
+            } else if (response?.validation.vehicleType === "bus") {
+              // 0.97kg CO2 per km per passenger on a bus on average
+              setSuccessData(response?.validation.distanceTravelled * 0.97);
+            } else if (response?.validation.vehicleType === "train") {
+              // 0.35kg CO2 per km per passenger on a train on average
+              setSuccessData(response?.validation.distanceTravelled * 0.35);
+            }
+          }
+          // Electricity data from https://www.nccs.gov.sg/singapores-climate-action/mitigation-efforts/power/
+          else if (response?.validation.kWh) {
+            // 0.4kg CO2 per kWh on average
+            setSuccessData(response?.validation.kWh * 0.4);
+          } else if (response?.validation.carbonFootprint) {
+            setSuccessData(response?.validation.carbonFootprint);
+          }
+          // Divide by 1000 to convert kilogram into metric ton, which is equivalent to 1 carbon credit for tree planting
+          else if (response?.validation.carbonSequestrationEstimate) {
+            setSuccessData(
+              response?.validation.carbonSequestrationEstimate / 1000
+            );
+          }
+        }
       } catch (error) {
         alert("Error submitting receipt");
       } finally {

@@ -45,7 +45,7 @@ export const SubmissionModal = () => {
       // Electricity data from https://www.nccs.gov.sg/singapores-climate-action/mitigation-efforts/power/
       else if (response?.validation.kWh) {
         // 0.4kg CO2 per kWh on average
-        setCarbonFootprint(response?.validation.kWh * 400);
+        setCarbonFootprint(response?.validation.kWh * 0.4);
       } else if (response?.validation.carbonFootprint) {
         setCarbonFootprint(response?.validation.carbonFootprint);
       }
