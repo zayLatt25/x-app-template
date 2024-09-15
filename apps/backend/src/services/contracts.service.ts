@@ -13,6 +13,7 @@ export class ContractsService {
       const result = await (
         await ecoEarnContract.transact.registerValidSubmission(submission.address, unitsUtils.parseUnits(REWARD_AMOUNT, 'ether'))
       ).wait();
+      console.log('Result', result);
       isSuccess = !result.reverted;
     } catch (error) {
       console.log('Error', error);
@@ -25,5 +26,4 @@ export class ContractsService {
     const isMaxSubmissionsReached = (await ecoEarnContract.read.isUserMaxSubmissionsReached(submission.address))[0];
     if (Boolean(isMaxSubmissionsReached) === true) throw new HttpException(409, `EcoEarn: Max submissions reached for this cycle`);
   }
-
 }
